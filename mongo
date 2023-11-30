@@ -1,0 +1,19 @@
+show dbs
+use testname
+db.createCollection('dvh')
+show collections
+show dbs
+show tables
+db.dvh.insertOne({name:"",_id:100})
+db.dvh.find()
+
+db.games.insertMany([
+  { name: "Game1", genre: "Action", rating: 9.5 },
+  { name: "Game2", genre: "Adventure", rating: 8.8 },
+  { name: "Game3", genre: "RPG", rating: 9.2 },
+  { name: "Game4", genre: "Strategy", rating: 8.5 },
+  { name: "Game5", genre: "Sports", rating: 8.9 }
+]);
+db.games.find({});
+db.games.findOne({ name: "Game1" });
+db.games.find({}).sort({ rating: -1 }).limit(3);
